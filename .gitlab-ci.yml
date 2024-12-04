@@ -1,0 +1,61 @@
+stages:
+  - test
+  - build
+
+lint_uat:
+  stage: test
+  image: node:18-alpine
+  before_script:
+    - apk update -qf
+    - apk add make -qf
+  script:
+    - make install runtest
+  only:
+    refs:
+      - merge_requests
+      - /^(release.*\/.*|devel)$/
+
+lint:
+  stage: test
+  image: node:18-alpine
+  before_script:
+    - apk update -qf
+    - apk add make -qf
+  script:
+    - make install runtest
+  only:
+    - tags
+
+build_uat:
+  stage: build
+  image: node:18-alpine
+  before_script:
+    - apk update -qf
+    - apk add zip unzip gawk make curl -qf
+    - yarn global add @quasar/cli
+  script:
+    - make build-uat VERSION=$CI_COMMIT_REF_NAME
+  only:
+    refs:
+      - merge_requests
+      - /^(release.*\/.*|devel)$/
+  artifacts:
+    expire_in: 5 mins
+    paths:
+      - dist/spa
+
+build:
+  stage: build
+  image: node:18-alpine
+  before_script:
+    - apk update -qf
+    - apk add zip unzip gawk make curl -qf
+    - yarn global add @quasar/cli
+  script:
+    - make build VERSION=$CI_COMMIT_REF_NAME
+  only:
+    - tags
+  artifacts:
+    expire_in: 5 mins
+    paths:
+      - dist/spa

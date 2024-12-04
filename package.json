@@ -1,0 +1,73 @@
+{
+  "name": "admin-portal",
+  "version": "CI_VERSION",
+  "description": "CTR",
+  "productName": "CTR",
+  "author": "Dandy <dandy@mggsoftware.com>",
+  "private": true,
+  "scripts": {
+    "lint": "yarn run eslint --ext .js,.vue src/ --fix && yarn run stylelint src/**/*.vue",
+    "test": "yarn lint"
+  },
+  "dependencies": {
+    "@casl/ability": "^6.3.2",
+    "@casl/vue": "1.x",
+    "@feathersjs/authentication-client": "^4.5.15",
+    "@feathersjs/feathers": "^4.5.15",
+    "@feathersjs/rest-client": "^4.5.15",
+    "@quasar/extras": "^1.15.7",
+    "@vue/composition-api": "^1.0.0-beta.14",
+    "axios": "1.2.1",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.14.0",
+    "feathers-hooks-common": "^6.1.5",
+    "feathers-vuex": "^3.12.3",
+    "firebase": "^9.14.0",
+    "js-file-downloader": "^1.1.20",
+    "leaflet": "^1.7.1",
+    "leaflet-routing-machine": "^3.2.12",
+    "leaflet.markercluster": "^1.5.1",
+    "quasar": "1",
+    "socket.io-client": "^2.3.1",
+    "vue-excel-xlsx": "^1.2.2",
+    "vue-i18n": "^8.22.1",
+    "vue-moment": "^4.1.0",
+    "vue-native-notification": "^1.1.1",
+    "vue-socket.io": "^3.0.10",
+    "vue-tel-input": "^4.4.2",
+    "vue2-leaflet": "^2.6.0",
+    "vuelidate": "^0.7.5"
+  },
+  "devDependencies": {
+    "@quasar/app": "2.4.3",
+    "babel-eslint": "^10.0.1",
+    "eslint": "6.8.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-loader": "3.0.3",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "eslint-plugin-vue": "9.2.0",
+    "postcss-html": "1.5.0",
+    "stylelint": "15.3.0",
+    "stylelint-config-recommended-vue": "1.4.0",
+    "stylelint-config-standard": "31.0.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 14.21.2",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

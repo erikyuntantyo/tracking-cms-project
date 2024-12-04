@@ -1,0 +1,33 @@
+// app global css in Sass form
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+body
+  font-family: 'Montserrat', sans-serif
+  font-weight: 500
+
+.table-height
+    max-height: calc(100vh - 170px)
+
+.my-sticky-header-table
+  /* height or max-height is important */
+  height: auto
+
+  .q-table__top,
+  .q-table__bottom,
+  thead tr:first-child th
+    /* bg color is important for th; just specify one */
+    background-color: #fff
+
+  thead tr th
+    position: sticky
+    z-index: 1
+  thead tr:first-child th
+    top: 0
+
+  /* this is when the loading indicator appears */
+  &.q-table--loading thead tr:last-child th
+    /* height of all previous header rows */
+    top: 48px
+
+.q-checkbox__inner--truthy
+  color: $red-9 !important
